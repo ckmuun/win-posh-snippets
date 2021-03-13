@@ -1,0 +1,8 @@
+# raw command for IPv4. v6tov6 is also feasible
+# netsh interface portproxy add v4tov4 listenaddress=<your host ip> listenport=<host-machine-port> connectadress=<ip to forward to> connectport=<port to forward to on other machine> 
+
+
+# example: in this case, 172.25.75.81 is the minikube ip address. But any address the host machine can resolve is feasible
+# This command is used to publish some k8s service running on minikube on a win10 machine to the win10 machine's ip
+netsh interface portproxy add v4tov4 listenaddress=192.168.178.8 listenport=31617 connectadress=172.25.75.81 connectport=31617
+
